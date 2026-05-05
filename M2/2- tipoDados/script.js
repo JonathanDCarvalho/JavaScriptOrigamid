@@ -284,3 +284,12 @@ if ("Gato" === "gato" || 5 > 2) {
   console.log("Falso");
 }
 // Cão
+
+let media = 6;
+if (media >= 6) {
+  console.log('Aprovado')
+} else {
+  console.log('Reprovado')
+}
+
+console.log(media >= 6 ? 'Aprovado' : 'Reprovado');
