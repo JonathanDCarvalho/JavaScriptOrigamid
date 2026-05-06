@@ -69,7 +69,7 @@ console.log("--------------------");
 // Email
 console.log("Email");
 
-const regexpEmail = /\d/;
+const regexpEmail = /[\w.-]+@[\w-]+\.[\w.-]+/gi;
 
 const emails = [
 	"email@email.com",
@@ -81,5 +81,53 @@ const emails = [
 	"c@contato.cc",
 ];
 
+for (email of emails) {
+	console.log(email, email.match(regexpEmail));
+}
+
 // site de referência pra email regex.
 // http://emailregex.com/
+
+console.log("--------------------");
+
+// Tag
+console.log("Tag");
+
+const regexpTag = /<\/?[\w\s="']+\/?>/;
+
+const tags = [
+	"<div>Isso é uma div</div>",
+	'<div class="ativa">Essa está ativa</div>',
+	'<img src="imagem" />',
+	'<img src="imagem">',
+	'<ul class="ativa">',
+	"<li>Essa está ativa</li>",
+	"</ul>",
+];
+
+for (tag of tags) {
+	console.log(tag, tag.match(regexpTag));
+}
+
+console.log("--------------------");
+
+// Tag Apenas o Nome
+console.log("Tag Apenas o Nome");
+
+const regexpTagName = /(?<=<\/?)[\w]+/gi;
+
+const tagsName = [
+	"<div>Isso é uma div</div>",
+	'<div class="ativa">Essa está ativa</div>',
+	'<img src="imagem" />',
+	'<img src="imagem">',
+	'<ul class="ativa">',
+	"<li>Essa está ativa</li>",
+	"</ul>",
+];
+
+for (tag of tagsName) {
+	console.log(tag, tag.match(regexpTagName));
+}
+
+console.log("--------------------");
