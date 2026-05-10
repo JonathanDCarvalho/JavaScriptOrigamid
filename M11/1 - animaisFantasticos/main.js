@@ -434,6 +434,126 @@ function _asyncToGenerator(n) {
 
 /***/ },
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js"
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js ***!
+  \*******************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _classCallCheck)
+/* harmony export */ });
+function _classCallCheck(a, n) {
+  if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+}
+
+
+/***/ },
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/createClass.js"
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/createClass.js ***!
+  \****************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _createClass)
+/* harmony export */ });
+/* harmony import */ var _toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toPropertyKey.js */ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js");
+
+function _defineProperties(e, r) {
+  for (var t = 0; t < r.length; t++) {
+    var o = r[t];
+    o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, (0,_toPropertyKey_js__WEBPACK_IMPORTED_MODULE_0__["default"])(o.key), o);
+  }
+}
+function _createClass(e, r, t) {
+  return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+    writable: !1
+  }), e;
+}
+
+
+/***/ },
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js"
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js ***!
+  \****************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ toPrimitive)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+
+function toPrimitive(t, r) {
+  if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+
+
+/***/ },
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js"
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js ***!
+  \******************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ toPropertyKey)
+/* harmony export */ });
+/* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
+
+
+function toPropertyKey(t) {
+  var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
+  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
+}
+
+
+/***/ },
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js"
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _typeof)
+/* harmony export */ });
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+
+
+/***/ },
+
 /***/ "./js/modules/accordion.js"
 /*!*********************************!*\
   !*** ./js/modules/accordion.js ***!
@@ -849,33 +969,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+
+
 // Scroll Suave Link Interno
-
-function initScrollSuave() {
-  var linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]');
-  function scrollToSection(e) {
-    e.preventDefault();
-    var href = e.currentTarget.getAttribute("href");
-    var section = document.querySelector(href);
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
-    // forma alternativa
-    // const topo = section.offsetTop;
-    // window.scrollTo({
-    //   top: topo,
-    //   behavior: "smooth",
-    // });
+var ScrollSuave = /*#__PURE__*/function () {
+  function ScrollSuave(links, options) {
+    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ScrollSuave);
+    this.linksInternos = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = {
+        behavior: "smooth",
+        block: "start"
+      };
+    } else {
+      this.options = options;
+    }
+    this.scrollToSection = this.scrollToSection.bind(this);
   }
-  if (linksInternos.length) {
-    linksInternos.forEach(function (link) {
-      link.addEventListener("click", scrollToSection);
-    });
-  }
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initScrollSuave);
+  return (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ScrollSuave, [{
+    key: "scrollToSection",
+    value: function scrollToSection(e) {
+      e.preventDefault();
+      var href = e.currentTarget.getAttribute("href");
+      var section = document.querySelector(href);
+      section.scrollIntoView(this.options);
+    }
+  }, {
+    key: "addLinkEvent",
+    value: function addLinkEvent() {
+      var _this = this;
+      this.linksInternos.forEach(function (link) {
+        link.addEventListener("click", _this.scrollToSection);
+      });
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      if (this.linksInternos.length) {
+        this.addLinkEvent();
+      }
+      return this;
+    }
+  }]);
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollSuave);
 
 /***/ },
 
@@ -1058,7 +1197,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_modules_scroll_suave_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+var options = {
+  behavior: "smooth",
+  block: "start"
+};
+var scrollSuave = new _modules_scroll_suave_js__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-menu="suave"] a[href^="#"]', options);
+scrollSuave.init();
 (0,_modules_scroll_animacao_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 (0,_modules_accordion_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_modules_tab_nav_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
