@@ -1,0 +1,19 @@
+{
+	"name": "animais-eslint",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.html",
+	"scripts": {
+		"build": "webpack --mode production ./js/script.js -o ./main.js",
+		"dev": "webpack --mode development ./js/script.js -o ./main.js --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"devDependencies": {
+		"eslint": "^10.3.0",
+		"webpack": "^5.106.2",
+		"webpack-cli": "^7.0.2"
+	}
+}

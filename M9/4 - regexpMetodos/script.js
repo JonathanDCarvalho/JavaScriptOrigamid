@@ -114,6 +114,24 @@ console.log("-------------------");
 // Callback
 // Para substituições mais complexas, podemos utilizar um callback como segundo argumento do replace. O valor do return será o que irá substituir cada match.
 
+const regexpFunction = new RegExp(/(\w+@)([\w.]+)/g);
+
 const emails1 = `joao@homail.com.br
 marta@ggmail.com.br
-bruna@oulook.com.br`;
+bruna@oulook.com.br
+jonathan@origamid.com`;
+
+const resultado4 = emails1.replace(regexpFunction, function (...args) {
+	if (args[2] === "homail.com.br") {
+		return args[1] + "hotmail.com";
+	} else if (args[2] === "ggmail.com.br") {
+		return args[1] + "gmail.com.br";
+	} else if (args[2] === "oulook.com.br") {
+		return args[1] + "outlook.com.br";
+	} else {
+		return args[0];
+	}
+	return "X";
+});
+
+console.log(resultado4);
