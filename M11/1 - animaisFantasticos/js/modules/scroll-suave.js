@@ -1,31 +1,37 @@
 // Scroll Suave Link Interno
 
-function initScrollSuave() {
-	const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]');
+class ScrollSuave {
+	constructor(links, options) {
+		this.linksInternos = document.querySelectorAll(links);
+		if (options === undefined) {
+			this.options = { behavior: "smooth", block: "start" };
+		} else {
+			this.options = options;
+		}
 
-	function scrollToSection(e) {
+		this.scrollToSection = this.scrollToSection.bind(this);
+	}
+
+	scrollToSection(e) {
 		e.preventDefault();
 		const href = e.currentTarget.getAttribute("href");
 		const section = document.querySelector(href);
 
-		section.scrollIntoView({
-			behavior: "smooth",
-			block: "start",
-		});
-
-		// forma alternativa
-		// const topo = section.offsetTop;
-		// window.scrollTo({
-		//   top: topo,
-		//   behavior: "smooth",
-		// });
+		section.scrollIntoView(this.options);
 	}
 
-	if (linksInternos.length) {
-		linksInternos.forEach((link) => {
-			link.addEventListener("click", scrollToSection);
+	addLinkEvent() {
+		this.linksInternos.forEach((link) => {
+			link.addEventListener("click", this.scrollToSection);
 		});
+	}
+
+	init() {
+		if (this.linksInternos.length) {
+			this.addLinkEvent();
+		}
+		return this;
 	}
 }
 
-export default initScrollSuave;
+export default ScrollSuave;
